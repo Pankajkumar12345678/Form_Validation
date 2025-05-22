@@ -29,17 +29,28 @@ A responsive and user-friendly sign-up form built with **React**, **Tailwind CSS
 ## 📁 File Structure
 
 src/
+
 │
 ├── components/
+
 │ ├── Input.jsx # Custom input component with validation
+
 │ └── PasswordStrengthMeter.jsx # Password strength feedback
+
 │
+
 ├── pages/
+
 │ └── SignUpPage.jsx # Main Sign Up form
+
 │
+
 ├── App.jsx # Root app
+
 ├── main.jsx # Entry point
+
 └── index.css # Global styles
+
 
 
 
