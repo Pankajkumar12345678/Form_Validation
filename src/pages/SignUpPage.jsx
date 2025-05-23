@@ -1,11 +1,12 @@
 // SignUpPage.jsx
 import { motion } from "framer-motion";
 import Input from "../components/Input";
-import { Lock, Mail, User, Phone, Globe, MapPin, BadgeIndianRupee, Fingerprint } from "lucide-react";
+import { Lock, Mail, User, Phone,BadgeIndianRupee, Fingerprint } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PasswordStrengthMeter from "../components/PasswordStrengthMeter";
 import toast from "react-hot-toast";
+import Dropdown from "../components/Dropdown";
 
 const SignUpPage = () => {
 	const [formData, setFormData] = useState({
@@ -144,30 +145,14 @@ const SignUpPage = () => {
   						errorMessage="Enter a valid phone number with country code (e.g. +91 xxxxxxxxxx)"
 						onValidityChange={handleValidityChange}
 					/>
-					<Input
-						icon={Globe}
-						type='text'
-						name='country'
-						placeholder='Country'
-						value={formData.country}
+					
+					<Dropdown
+						country={formData.country}
+						city={formData.city}
 						onChange={handleChange}
-						required
-						pattern="^[a-zA-Z\\s]{2,}$"
-						errorMessage="Country should contain only letters"
 						onValidityChange={handleValidityChange}
 					/>
-					<Input
-						icon={MapPin}
-						type='text'
-						name='city'
-						placeholder='City'
-						value={formData.city}
-						onChange={handleChange}
-						required
-						pattern="^[a-zA-Z\\s]{2,}$"
-						errorMessage="City should contain only letters"
-						onValidityChange={handleValidityChange}
-					/>
+					
 					<Input
 						icon={BadgeIndianRupee}
 						type='text'

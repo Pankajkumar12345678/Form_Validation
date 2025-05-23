@@ -12,6 +12,8 @@ const Input = ({ icon: Icon, type, name, errorMessage, pattern, required, ...pro
 	const inputType = type === "password" ? (showPassword ? "text" : "password") : type;
 	const showError = touched && errorMessage && pattern && !new RegExp(pattern).test(props.value);
 
+	// console.log(JSON.stringify(props))
+
 	useEffect(()=>{
 		if(!showError){
 			props.onValidityChange(name, true);
@@ -27,7 +29,6 @@ const Input = ({ icon: Icon, type, name, errorMessage, pattern, required, ...pro
 				<div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
 					<Icon className='size-5 text-green-500' />
 				</div>
-
 				<input
 					type={inputType}
 					name={name}
